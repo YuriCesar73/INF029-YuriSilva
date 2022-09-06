@@ -11,17 +11,19 @@ int main()
   
     int a = 10;
     tresNumeros(a, meuVetor);
+    printf("\n");
     printf("%d\n", meuVetor[0]);
     printf("%d\n", meuVetor[1]);
     printf("%d\n", meuVetor[2]);
-    printf("%d\n", a);
+    
 }
 
 void tresNumeros(int a, int vet[])
 {
 
-    vet[0] = 45;
-    vet[1] = 2;
-    vet[2] = 3;
-    a = 15;
+  for (int i=0;i<3;i++){
+    printf("Digite o numero: \n");
+    scanf("%d",&vet[i]);
+  }
+   
 }

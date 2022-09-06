@@ -15,24 +15,6 @@ int i;
 int a;
 numeros n;
 
-  
-
-  /*printf("Digite o numero: \n);
-  scanf("%d",&a);
-  n.n1=a;
-
-  printf("Digite o numero\n");
-  scanf("%d",&a);
-  n.n2=a;
-
-  printf("Digite o numero\n");
-  scanf("%d",&a);
-  n.n3=a;
-
-  printf("Digite o numero\n");
-  scanf("%d",&a);
-  n.n4=a;*/
-
   n=ler();
 
 
