@@ -28,7 +28,6 @@ No *montarListaEncadeadaComCabecote();
 void getDadosListaEncadeadaComCabecote(No *inicio, int vetorAux[]);
 void destruirListaEncadeadaComCabecote(No **inicio);
 
-int ehPosicaoValida(int posicao);
 void OrdenarValores (int vetor[], int tam);
 
 void inicializar();
