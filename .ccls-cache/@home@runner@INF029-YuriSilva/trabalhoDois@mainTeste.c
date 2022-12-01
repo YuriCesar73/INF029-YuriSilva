@@ -12,7 +12,7 @@ void testeExcluir(); //OK
 void testeExcluirNumeroEspecifico();//OK
 void testeListar();//OK
 void testeRetornarTodosNumeros(); // OK
-void testeMudarTamanhoEstrutura(); // ERRO em 2 testes
+void testeMudarTamanhoEstrutura(); // OK
 void testeListaEncadeada();
 
 int main()

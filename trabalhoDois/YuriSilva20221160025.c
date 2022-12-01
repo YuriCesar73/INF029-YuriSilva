@@ -436,6 +436,10 @@ int modificarTamanhoEstruturaAuxiliar(int posicao, int novoTamanho)
 
 	else {
 		Struct[posicao].tamanho = tamanhoFinal;
+		if (Struct[posicao].tamanho < Struct[posicao].posicaoAtual)
+		{
+			Struct[posicao].posicaoAtual = Struct[posicao].tamanho;
+		}
 	}
 
 	return SUCESSO;
