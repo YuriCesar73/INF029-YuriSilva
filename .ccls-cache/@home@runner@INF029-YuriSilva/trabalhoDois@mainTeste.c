@@ -5,15 +5,15 @@
 
 void show_log(char *str);
 
-void testeInserirSemNada(); //OK
-void testeCriarEstrutura(); //OK
-void testeInserirComEstrutura(); //OK
-void testeExcluir(); //OK
-void testeExcluirNumeroEspecifico();//OK
-void testeListar();//OK
-void testeRetornarTodosNumeros(); // OK
-void testeMudarTamanhoEstrutura(); // OK
-void testeListaEncadeada();
+void testeInserirSemNada();// OK
+void testeCriarEstrutura();// OK
+void testeInserirComEstrutura();// OK
+void testeExcluir();// OK
+void testeExcluirNumeroEspecifico();// OK
+void testeListar();// OK
+void testeRetornarTodosNumeros();// OK
+void testeMudarTamanhoEstrutura();// OK
+void testeListaEncadeada();// OK
 
 int main()
 {
@@ -26,8 +26,8 @@ int main()
 	  testeListar();
 	  testeRetornarTodosNumeros();
 	  testeMudarTamanhoEstrutura();
-  // testeListaEncadeada();
-  //  finalizar();
+      testeListaEncadeada();
+      finalizar();
 }
 int ligado = 0;
 void show_log(char *str)

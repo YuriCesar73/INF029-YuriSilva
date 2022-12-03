@@ -496,16 +496,62 @@ Retorno (No*)
 No *montarListaEncadeadaComCabecote()
 {
 
-    return NULL;
+	int i, j;
+	int contador = 0;
+	struct reg *inicio = NULL;
+	struct reg *novo;
+	struct reg *nuevo;
+
+	for (i = 0; i < TAM; i++)
+	{
+		if (Struct[i].vetorPrincipal != NULL && Struct[i].posicaoAtual != 0)
+		{
+			for (j = 0; j < Struct[i].posicaoAtual; j++)
+				{
+					novo = (struct reg*) malloc (sizeof(struct reg));
+					novo -> conteudo = Struct[i].vetorPrincipal[j];
+					novo -> prox = inicio;
+					inicio = novo;
+				}
+			contador++;
+		}
+	}
+
+	if (contador != 0) return inicio;
+
+	else return NULL;
+	
 }
 
 /*
-Objetivo: retorna os números da lista enceada com cabeçote armazenando em vetorAux.
+Objetivo: retorna os números da lista encadeada com cabeçote armazenando em vetorAux.
 Retorno void
 */
 void getDadosListaEncadeadaComCabecote(No *inicio, int vetorAux[])
 {
+	int i,j;
+	int contador;
+	int vetorAuxiliar[TAM*TAM*TAM];
+	
+	contador = j = 0;
+	
+	for (i = 0; inicio != NULL; i++) 
+	{
+	vetorAuxiliar[i] = inicio -> conteudo;
+	inicio = inicio -> prox;
+	contador++;
+	j++;
+	}
+	j = j - 1;
+	
+	for (i = 0; i < contador; i++)
+	{
+		vetorAux[i] = vetorAuxiliar[j];
+		j--;
+	}
 }
+
+
 
 /*
 Objetivo: Destruir a lista encadeada com cabeçote a partir de início.
@@ -516,6 +562,7 @@ Retorno
 */
 void destruirListaEncadeadaComCabecote(No **inicio)
 {
+	*inicio = NULL;
 }
 
 /*
@@ -541,6 +588,8 @@ para poder liberar todos os espaços de memória das estruturas auxiliares.
 
 void finalizar()
 {
+	int i;
+	for (i = 0; i < TAM; i++) free (Struct[i].vetorPrincipal);
 }
 
 
