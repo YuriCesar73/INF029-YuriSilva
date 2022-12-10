@@ -500,7 +500,11 @@ No *montarListaEncadeadaComCabecote()
 	int contador = 0;
 	struct reg *inicio = NULL;
 	struct reg *novo;
-	struct reg *nuevo;
+	struct reg *atual;
+
+	//criação do cabeçote
+	inicio = (struct reg*) malloc (sizeof (struct reg));
+	
 
 	for (i = 0; i < TAM; i++)
 	{
@@ -508,10 +512,7 @@ No *montarListaEncadeadaComCabecote()
 		{
 			for (j = 0; j < Struct[i].posicaoAtual; j++)
 				{
-					novo = (struct reg*) malloc (sizeof(struct reg));
-					novo -> conteudo = Struct[i].vetorPrincipal[j];
-					novo -> prox = inicio;
-					inicio = novo;
+					inicio = inserirElemento(inicio, Struct[i].vetorPrincipal[j]);
 				}
 			contador++;
 		}
@@ -529,25 +530,14 @@ Retorno void
 */
 void getDadosListaEncadeadaComCabecote(No *inicio, int vetorAux[])
 {
-	int i,j;
-	int contador;
-	int vetorAuxiliar[TAM*TAM*TAM];
+	int i;
+	struct reg *listar;
+	listar = inicio -> prox;
 	
-	contador = j = 0;
-	
-	for (i = 0; inicio != NULL; i++) 
+	for (i = 0; listar != NULL; i++) 
 	{
-	vetorAuxiliar[i] = inicio -> conteudo;
-	inicio = inicio -> prox;
-	contador++;
-	j++;
-	}
-	j = j - 1;
-	
-	for (i = 0; i < contador; i++)
-	{
-		vetorAux[i] = vetorAuxiliar[j];
-		j--;
+	vetorAux[i] = listar -> conteudo;
+	listar = listar -> prox;
 	}
 }
 
@@ -610,4 +600,33 @@ void OrdenarValores (int vetor[], int tam){
 	   vetor[min] = aux;
 	 }
 	}
+}
+
+struct reg *inserirElemento(struct reg *inicio, int valor)
+{
+	struct reg *novo;
+	struct reg *atual;
+
+	novo = (struct reg *) malloc (sizeof (struct reg));
+
+	atual = inicio;
+
+	if (inicio == NULL)
+	{
+		novo -> conteudo = valor;
+		novo -> prox = inicio;
+		inicio = novo;
+	}
+	else {
+
+		while(atual -> prox != NULL)
+			{
+				atual = atual -> prox;
+			}
+		atual -> prox = novo;
+		novo -> conteudo = valor;
+		novo -> prox = NULL;
+	}
+
+	return inicio;
 }

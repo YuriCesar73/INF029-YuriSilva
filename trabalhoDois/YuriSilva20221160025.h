@@ -28,7 +28,9 @@ No *montarListaEncadeadaComCabecote();
 void getDadosListaEncadeadaComCabecote(No *inicio, int vetorAux[]);
 void destruirListaEncadeadaComCabecote(No **inicio);
 
+//FUNÇÕES ADICIONADAS
 void OrdenarValores (int vetor[], int tam);
+struct reg *inserirElemento(struct reg *inicio, int valor);
 
 void inicializar();
 void finalizar();
